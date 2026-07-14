@@ -330,7 +330,8 @@ img { max-width: 100%; display: block; }
 .back-to-top:hover { background: var(--accent); color: #fff; transform: translateY(-3px); }
 
 /* ===== Visit Counter ===== */
-.visits { position: fixed; top: 80px; right: 32px; z-index: 998; font-size: 12px; letter-spacing: 0.5px; opacity: 0.4; font-weight: 400; pointer-events: none; transition: opacity 0.3s ease, color var(--transition); }
+.visits { position: fixed; top: 80px; right: 32px; z-index: 998; font-size: 12px; letter-spacing: 0.5px; font-weight: 400; pointer-events: none; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border); background: rgba(23,27,34,0.08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transition: opacity 0.3s ease, color var(--transition), background var(--transition), border-color var(--transition); }
+[data-theme="light"] .visits { background: rgba(244,248,255,0.1); }
 
 /* ===== Responsive ===== */
 @media (max-width: 1200px) {
@@ -393,6 +394,10 @@ img { max-width: 100%; display: block; }
     height: 300px;
   }
 }
+
+
+
+
 
 
 
