@@ -1,0 +1,53 @@
+﻿import { useRef, useEffect, useState } from "react";
+import { gsap } from "gsap";
+
+export default function Hero() {
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const ctaRef = useRef(null);
+  const [playing, setPlaying] = useState(true);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+      tl.fromTo("video", { opacity: 0 }, { opacity: 1, duration: 1.5 });
+      tl.fromTo(titleRef.current, { clipPath: "inset(0 50% 0 50%)", y: 60, opacity: 0 },
+        { clipPath: "inset(0 0% 0 0%)", y: 0, opacity: 1, duration: 1.2 }, "-=0.8");
+      tl.fromTo(subtitleRef.current, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, "-=0.4");
+      tl.fromTo(ctaRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, "-=0.3");
+    }, sectionRef.current);
+    return () => ctx.revert();
+  }, []);
+
+  const toggleVideo = () => {
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setPlaying(false);
+    }
+  };
+
+  return (
+    <section id="hero" className="hero-section" ref={sectionRef}>
+      <div className="hero-overlay" />
+      <video ref={videoRef} className="hero-video" src="/assets/视频背景.mp4" autoPlay muted loop playsInline />
+      <button className="video-toggle" onClick={toggleVideo} aria-label={playing ? "暂停" : "播放"}>
+        {playing ? "I I" : ">"}
+      </button>
+      <div className="hero-content">
+        <h1 className="hero-title" ref={titleRef}>
+          <span className="hero-title-line">三维空间 · 视觉创意</span>
+        </h1>
+        <p className="hero-subtitle" ref={subtitleRef}>视觉设计 / AI 创意 / 品牌设计</p>
+        <div className="hero-cta" ref={ctaRef}>
+          <a className="cta-primary" href="#projects">查看作品</a>
+          <a className="cta-secondary" href="#contact">联系我</a>
+        </div>
+      </div>
+    </section>
+  );
+}
