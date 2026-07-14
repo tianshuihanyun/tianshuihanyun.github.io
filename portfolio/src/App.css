@@ -326,3 +326,48 @@ img { max-width: 100%; display: block; }
   .visits { right: 16px; top: 72px; font-size: 11px; }
   .back-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
 }
+
+/* ===== 更多作品 —— 双堆叠卡片 ===== */
+.more-works {
+  margin-top: 80px;
+  text-align: center;
+}
+.more-works-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.more-works-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+.more-works-grid {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  align-items: flex-start;
+}
+.more-works-col {
+  flex: 0 0 auto;
+}
+
+.stack-container {
+  width: 360px;
+  height: 360px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .more-works-grid {
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+  }
+  .stack-container {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+
