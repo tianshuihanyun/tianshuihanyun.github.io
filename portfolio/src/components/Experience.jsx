@@ -44,7 +44,7 @@ export default function Experience() {
             fillOpacity={0.12}
           >
             <div className="exp-card profile-card" style={{ height: "100%" }}>
-              <div className="profile-avatar"><img src="https://cdn.jsdelivr.net/gh/tianshuihanyun/tianshuihanyun.github.io@main/portfolio/public/assets/个人头像.png" alt="头像" loading="lazy" width="200" height="200" /></div>
+              <div className="profile-avatar"><img src="/assets/个人头像.png" alt="头像" loading="lazy" width="200" height="200" /></div>
               <GradientText colors={["#ff9fca", "#91d8ff", "#91e5c7", "#c9b6ff", "#ff9fca"]} animationSpeed={6}><h3 className="profile-name">hanqingyan3293</h3></GradientText>
               <p className="profile-role">视觉设计师 / AI设计师 / 3D设计师</p>
               <p className="profile-desc">专注于三维空间与视觉创意的设计师。通过建筑可视化、AIGC生成与3D建模渲染及数字艺术创作，探索虚拟与现实交汇处的设计可能。</p>
@@ -78,5 +78,6 @@ export default function Experience() {
     </section>
   );
 }
+
 
 

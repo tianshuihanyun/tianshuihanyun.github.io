@@ -75,7 +75,7 @@ export default function Hero() {
       <div className="hero-overlay" />
       <div ref={noiseRef} className="hero-noise" />
       <div className="hero-bottom-fade" />
-      <video ref={videoRef} className="hero-video" src="https://cdn.jsdelivr.net/gh/tianshuihanyun/tianshuihanyun.github.io@main/portfolio/public/assets/视频背景.mp4" autoPlay muted loop playsInline preload="metadata" />
+      <video ref={videoRef} className="hero-video" src="/assets/视频背景.mp4" autoPlay muted loop playsInline preload="metadata" />
       <button className="video-toggle" onClick={toggleVideo} aria-label={playing ? "暂停" : "播放"}>
         {playing ? "I I" : ">"}
       </button>
@@ -92,5 +92,6 @@ export default function Hero() {
     </section>
   );
 }
+
 
 
