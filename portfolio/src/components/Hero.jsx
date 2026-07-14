@@ -42,7 +42,7 @@ export default function Hero() {
         <h1 className="hero-title" ref={titleRef}>
           <span className="hero-title-line">三维空间 · 视觉创意</span>
         </h1>
-        <p className="hero-subtitle" ref={subtitleRef}>视觉设计 / AI 创意 / 品牌设计</p>
+        <p className="hero-subtitle" ref={subtitleRef}>视觉设计 / AI 创意 / 3D设计</p>
         <div className="hero-cta" ref={ctaRef}>
           <a className="cta-primary" href="#projects">查看作品</a>
           <a className="cta-secondary" href="#contact">联系我</a>
@@ -51,3 +51,4 @@ export default function Hero() {
     </section>
   );
 }
+

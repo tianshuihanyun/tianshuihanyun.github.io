@@ -45,10 +45,10 @@ export default function Experience() {
           >
             <div className="exp-card profile-card" style={{ height: "100%" }}>
               <div className="profile-avatar"><img src="/assets/个人头像.png" alt="头像" /></div>
-              <GradientText colors={["#ff9fca", "#91d8ff", "#91e5c7", "#c9b6ff", "#ff9fca"]} animationSpeed={6}><h3 className="profile-name">Tianshui Hanyun</h3></GradientText>
-              <p className="profile-role">视觉设计师 / AI设计师 / 品牌设计师</p>
-              <p className="profile-desc">拥有多年视觉设计与品牌创意经验，擅长将前沿AI技术与传统设计美学融合。专注于品牌视觉系统、3D建模渲染、手绘插画及数字艺术创作。</p>
-              <div className="profile-contact"><span>tianshui@example.com</span><span>China</span></div>
+              <GradientText colors={["#ff9fca", "#91d8ff", "#91e5c7", "#c9b6ff", "#ff9fca"]} animationSpeed={6}><h3 className="profile-name">hanqingyan3293</h3></GradientText>
+              <p className="profile-role">视觉设计师 / AI设计师 / 3D设计师</p>
+              <p className="profile-desc">专注于三维空间与视觉创意的设计师。通过建筑可视化、AIGC生成与3D建模渲染及数字艺术创作，探索虚拟与现实交汇处的设计可能。</p>
+              <div className="profile-contact"><span>2501558749@qq.com</span><span>China</span></div>
             </div>
           </BorderGlow>
 
@@ -62,14 +62,14 @@ export default function Experience() {
           >
             <div className="exp-card stats-card" style={{ height: "100%", display: "flex", flexDirection: "column" }}>
               <div className="stats-grid" style={{ flex: 1 }}>
-                <div className="stat-item"><span className="stat-num">50+</span><span className="stat-label">品牌项目</span></div>
-                <div className="stat-item"><span className="stat-num">8+</span><span className="stat-label">年经验</span></div>
+                <div className="stat-item"><span className="stat-num">50+</span><span className="stat-label">项目</span></div>
+                <div className="stat-item"><span className="stat-num">10086+</span><span className="stat-label">年经验</span></div>
                 <div className="stat-item"><span className="stat-num">200+</span><span className="stat-label">设计作品</span></div>
-                <div className="stat-item"><span className="stat-num">30+</span><span className="stat-label">合作客户</span></div>
+                <div className="stat-item"><span className="stat-num">10+</span><span className="stat-label">奖项</span></div>
               </div>
               <div className="exp-tags">
-                <span>品牌设计</span><span>AI绘画</span><span>3D建模</span>
-                <span>UI/UX</span><span>插画</span><span>视觉传达</span>
+                <span>美术设计</span><span>3D建模</span><span>UI/UX</span>
+                <span>插画</span><span>PS图像</span><span>AE动效</span><span>AI绘画</span>
               </div>
             </div>
           </BorderGlow>
@@ -78,4 +78,3 @@ export default function Experience() {
     </section>
   );
 }
-

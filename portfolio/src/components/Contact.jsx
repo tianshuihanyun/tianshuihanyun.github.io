@@ -27,16 +27,17 @@ export default function Contact() {
       <div className="section-inner contact-inner">
         <h2 className="contact-title" ref={titleRef}>一起 <span className="accent">创造</span></h2>
         <div className="contact-content" ref={contentRef}>
-          <p className="contact-desc">如有品牌设计、视觉创意或 AI 艺术相关合作需求，欢迎联系。</p>
+          <p className="contact-desc">占位</p>
           <div className="contact-links">
-            <a href="mailto:tianshui@example.com" className="contact-link">电子邮箱</a>
-            <a href="#" className="contact-link">GitHub</a>
-            <a href="#" className="contact-link">站酷</a>
+            <a href="mailto:2501558749@qq.com" className="contact-link">电子邮箱</a>
+            <a href="https://github.com/hanqingyan3293" className="contact-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="#" className="contact-link">B站</a>
             <a href="#" className="contact-link">微信</a>
           </div>
-          <p className="contact-footer-text">&copy; 2026 Tianshui Hanyun 版权所有</p>
+          <p className="contact-footer-text">&copy; 2026 hanqingyan3293 版权所有</p>
         </div>
       </div>
     </section>
   );
 }
+
