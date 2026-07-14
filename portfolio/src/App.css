@@ -169,6 +169,30 @@ img { max-width: 100%; display: block; }
   transition: all 0.3s ease; cursor: pointer;
 }
 .video-toggle:hover { background: rgba(0,0,0,0.6); transform: scale(1.05); }
+/* ===== Hero Noise & Vignette ===== */
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+.hero-overlay {
+  box-shadow: inset 0 0 100px 30px rgba(0,0,0,0.25);
+}
+.hero-bottom-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--bg-secondary));
+}
 
 /* ===== Experience ===== */
 .experience-section { background: var(--bg-secondary); transition: background var(--transition); }
@@ -369,5 +393,8 @@ img { max-width: 100%; display: block; }
     height: 300px;
   }
 }
+
+
+
 
 

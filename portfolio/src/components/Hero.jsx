@@ -8,6 +8,28 @@ export default function Hero() {
   const ctaRef = useRef(null);
   const [playing, setPlaying] = useState(true);
   const videoRef = useRef(null);
+  const noiseRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = document.createElement("canvas");
+    const w = 256, h = 256;
+    canvas.width = w;
+    canvas.height = h;
+    const ctx = canvas.getContext("2d");
+    const imgData = ctx.createImageData(w, h);
+    for (let i = 0; i < imgData.data.length; i += 4) {
+      const v = Math.random() * 255;
+      imgData.data[i] = v;
+      imgData.data[i + 1] = v;
+      imgData.data[i + 2] = v;
+      imgData.data[i + 3] = 255;
+    }
+    ctx.putImageData(imgData, 0, 0);
+    const dataUrl = canvas.toDataURL("image/png");
+    if (noiseRef.current) {
+      noiseRef.current.style.backgroundImage = `url(${dataUrl})`;
+    }
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -34,6 +56,8 @@ export default function Hero() {
   return (
     <section id="hero" className="hero-section" ref={sectionRef}>
       <div className="hero-overlay" />
+      <div ref={noiseRef} className="hero-noise" />
+      <div className="hero-bottom-fade" />
       <video ref={videoRef} className="hero-video" src="/assets/视频背景.mp4" autoPlay muted loop playsInline />
       <button className="video-toggle" onClick={toggleVideo} aria-label={playing ? "暂停" : "播放"}>
         {playing ? "I I" : ">"}
@@ -51,4 +75,3 @@ export default function Hero() {
     </section>
   );
 }
-
