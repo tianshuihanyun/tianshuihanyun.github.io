@@ -6,22 +6,22 @@ import Stack from "./Stack";
 gsap.registerPlugin(ScrollTrigger);
 
 const largeProjects = [
-  { title: "3D 场景渲染", subtitle: "三维空间 · 光影叙事", image: "/assets/3d建模渲染-场景.png" },
-  { title: "产品键盘建模", subtitle: "工业设计 · 写实渲染", image: "/assets/3d建模渲染-键盘.png" },
+  { title: "3D 场景渲染", subtitle: "三维空间 · 光影叙事", image: "https://cdn.jsdelivr.net/gh/tianshuihanyun/tianshuihanyun.github.io@main/portfolio/public/assets/3d建模渲染-场景.png" },
+  { title: "产品键盘建模", subtitle: "工业设计 · 写实渲染", image: "https://cdn.jsdelivr.net/gh/tianshuihanyun/tianshuihanyun.github.io@main/portfolio/public/assets/3d建模渲染-键盘.png" },
 ];
 
 const smallProjects = [
-  { title: "卡通小房子", subtitle: "3D 角色场景", image: "/assets/3d-卡通小房子.png" },
-  { title: "花瓶建模", subtitle: "产品造型设计", image: "/assets/3d-花瓶.png" },
-  { title: "3D 锤子", subtitle: "硬表面建模", image: "/assets/3d-锤子.png" },
-  { title: "素描作品", subtitle: "传统美术功底", image: "/assets/学生时素描作品.jpg" },
-  { title: "手绘 · 魈", subtitle: "游戏角色同人", image: "/assets/年轻时手绘作品-游戏人物-魈.jpg" },
-  { title: "水粉 · 古镇", subtitle: "色彩风景写生", image: "/assets/年轻时水粉色彩作品-古镇风景.jpg" },
-  { title: "水粉 · 风景", subtitle: "自然光影记录", image: "/assets/年轻时水粉色彩作品-风景1.jpg" },
-  { title: "水粉 · 餐桌", subtitle: "生活静物创作", image: "/assets/年轻时水粉色彩作品-餐桌上的猫.jpg" },
+  { title: "卡通小房子", subtitle: "3D 角色场景", image: "https://cdn.jsdelivr.net/gh/tianshuihanyun/tianshuihanyun.github.io@main/portfolio/public/assets/3d-卡通小房子.png" },
+  { title: "花瓶建模", subtitle: "产品造型设计", image: "https://cdn.jsdelivr.net/gh/tianshuihanyun/tianshuihanyun.github.io@main/portfolio/public/assets/3d-花瓶.png" },
+  { title: "3D 锤子", subtitle: "硬表面建模", image: "https://cdn.jsdelivr.net/gh/tianshuihanyun/tianshuihanyun.github.io@main/portfolio/public/assets/3d-锤子.png" },
+  { title: "素描作品", subtitle: "传统美术功底", image: "https://cdn.jsdelivr.net/gh/tianshuihanyun/tianshuihanyun.github.io@main/portfolio/public/assets/学生时素描作品.jpg" },
+  { title: "手绘 · 魈", subtitle: "游戏角色同人", image: "https://cdn.jsdelivr.net/gh/tianshuihanyun/tianshuihanyun.github.io@main/portfolio/public/assets/年轻时手绘作品-游戏人物-魈.jpg" },
+  { title: "水粉 · 古镇", subtitle: "色彩风景写生", image: "https://cdn.jsdelivr.net/gh/tianshuihanyun/tianshuihanyun.github.io@main/portfolio/public/assets/年轻时水粉色彩作品-古镇风景.jpg" },
+  { title: "水粉 · 风景", subtitle: "自然光影记录", image: "https://cdn.jsdelivr.net/gh/tianshuihanyun/tianshuihanyun.github.io@main/portfolio/public/assets/年轻时水粉色彩作品-风景1.jpg" },
+  { title: "水粉 · 餐桌", subtitle: "生活静物创作", image: "https://cdn.jsdelivr.net/gh/tianshuihanyun/tianshuihanyun.github.io@main/portfolio/public/assets/年轻时水粉色彩作品-餐桌上的猫.jpg" },
 ];
 
-const PREFIX = "/assets/更多作品/";
+const PREFIX = "https://cdn.jsdelivr.net/gh/tianshuihanyun/tianshuihanyun.github.io@main/portfolio/public/assets/更多作品/";
 
 // 左侧 —— 电脑制作（3D卡通 + 工程文件）
 const leftWorks = [
@@ -54,7 +54,7 @@ function buildStackCards(list) {
       key={item.src}
       src={item.src}
       alt={item.title}
-      draggable={false}
+      loading="lazy" draggable={false}
       style={{ width: "100%", height: "100%", objectFit: "cover", pointerEvents: "none" }}
     />
   ));
@@ -175,4 +175,6 @@ export default function Projects() {
     </section>
   );
 }
+
+
 

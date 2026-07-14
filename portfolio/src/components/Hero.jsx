@@ -43,6 +43,23 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
   const toggleVideo = () => {
     if (videoRef.current.paused) {
       videoRef.current.play();
@@ -58,7 +75,7 @@ export default function Hero() {
       <div className="hero-overlay" />
       <div ref={noiseRef} className="hero-noise" />
       <div className="hero-bottom-fade" />
-      <video ref={videoRef} className="hero-video" src="/assets/视频背景.mp4" autoPlay muted loop playsInline />
+      <video ref={videoRef} className="hero-video" src="https://cdn.jsdelivr.net/gh/tianshuihanyun/tianshuihanyun.github.io@main/portfolio/public/assets/视频背景.mp4" autoPlay muted loop playsInline preload="metadata" />
       <button className="video-toggle" onClick={toggleVideo} aria-label={playing ? "暂停" : "播放"}>
         {playing ? "I I" : ">"}
       </button>
@@ -75,3 +92,5 @@ export default function Hero() {
     </section>
   );
 }
+
+
