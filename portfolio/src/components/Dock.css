@@ -52,8 +52,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -117,4 +117,45 @@
   background: var(--accent-glow);
   color: var(--accent);
   border-color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .dock-outer {
+    top: 8px;
+    max-width: calc(100% - 16px);
+  }
+
+  .dock-panel {
+    gap: 8px;
+    padding: 5px 10px;
+    border-radius: 14px;
+  }
+
+  .dock-item {
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+
+  .dock-label {
+    display: none;
+  }
+
+  .dock-theme-toggle {
+    height: 32px;
+    padding: 0 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 380px) {
+  .dock-panel {
+    gap: 6px;
+    padding: 5px 8px;
+  }
+
+  .dock-theme-toggle {
+    width: 32px;
+    padding: 0;
+    overflow: hidden;
+  }
 }

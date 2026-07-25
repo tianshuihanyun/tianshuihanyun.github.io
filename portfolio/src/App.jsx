@@ -1,4 +1,5 @@
-﻿import { ThemeProvider, useTheme } from "./hooks/useTheme";
+import ThemeProvider from "./hooks/ThemeProvider";
+import { useTheme } from "./hooks/useTheme";
 import ScrollProgress from "./components/ScrollProgress";
 import Dock from "./components/Dock";
 import Hero from "./components/Hero";
@@ -7,7 +8,6 @@ import Projects from "./components/Projects";
 import Advantages from "./components/Advantages";
 import Contact from "./components/Contact";
 import BackToTop from "./components/BackToTop";
-import SiteStats from "./components/SiteStats";
 import ClickSpark from "./components/ClickSpark";
 import "./App.css";
 
@@ -33,7 +33,6 @@ export default function App() {
     <ThemeProvider>
       <ClickSpark sparkColor="#c084fc" sparkSize={8} sparkRadius={18} sparkCount={6} duration={500}>
         <ScrollProgress />
-        <SiteStats />
         <Dock items={navItems} panelHeight={56} baseSize={44} magnification={66}>
           <ThemeDockToggle />
         </Dock>

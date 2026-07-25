@@ -28,20 +28,16 @@ export default function Experience() {
     return () => ctx.revert();
   }, []);
 
-  const glowColors = ["#c084fc", "#f472b6", "#38bdf8"];
-
   return (
     <section id="experience" className="section experience-section" ref={sectionRef}>
       <div className="section-inner">
         <h2 className="section-title-ch" ref={titleRef}>个人经历</h2>
         <div className="experience-grid" ref={contentRef}>
           <BorderGlow
-            colors={glowColors}
             borderRadius={28}
             glowIntensity={0.6}
             edgeSensitivity={35}
             glowRadius={20}
-            fillOpacity={0.12}
           >
             <div className="exp-card profile-card" style={{ height: "100%" }}>
               <div className="profile-avatar"><img src="/assets/个人头像.png" alt="头像" loading="lazy" width="200" height="200" /></div>
@@ -53,12 +49,10 @@ export default function Experience() {
           </BorderGlow>
 
           <BorderGlow
-            colors={["#38bdf8", "#a78bfa", "#f472b6"]}
             borderRadius={28}
             glowIntensity={0.6}
             edgeSensitivity={35}
             glowRadius={20}
-            fillOpacity={0.12}
           >
             <div className="exp-card stats-card" style={{ height: "100%", display: "flex", flexDirection: "column" }}>
               <div className="stats-grid" style={{ flex: 1 }}>

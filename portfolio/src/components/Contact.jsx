@@ -31,6 +31,8 @@ export default function Contact() {
           <div className="contact-links">
             <a href="mailto:2501558749@qq.com" className="contact-link">电子邮箱</a>
             <a href="https://github.com/hanqingyan3293" className="contact-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <span className="contact-link contact-placeholder" aria-disabled="true">B站待补充</span>
+            <span className="contact-link contact-placeholder" aria-disabled="true">微信待补充</span>
           </div>
           <p className="contact-footer-text">&copy; 2026 hanqingyan3293 版权所有</p>
         </div>
