@@ -34,7 +34,7 @@ export default function App() {
       <ClickSpark sparkColor="#c084fc" sparkSize={8} sparkRadius={18} sparkCount={6} duration={500}>
         <ScrollProgress />
         <SiteStats />
-        <Dock items={navItems} panelHeight={56} baseItemSize={44} magnification={66}>
+        <Dock items={navItems} panelHeight={56} baseSize={44} magnification={66}>
           <ThemeDockToggle />
         </Dock>
         <main>

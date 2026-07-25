@@ -9,6 +9,7 @@ export default function Hero() {
   const [playing, setPlaying] = useState(true);
   const videoRef = useRef(null);
   const noiseRef = useRef(null);
+  const userPausedRef = useRef(false);
 
   useEffect(() => {
     const canvas = document.createElement("canvas");
@@ -50,9 +51,12 @@ export default function Hero() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          video.play();
+          if (!userPausedRef.current) {
+            video.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+          }
         } else {
           video.pause();
+          setPlaying(false);
         }
       },
       { threshold: 0.3 }
@@ -62,9 +66,10 @@ export default function Hero() {
   }, []);
   const toggleVideo = () => {
     if (videoRef.current.paused) {
-      videoRef.current.play();
-      setPlaying(true);
+      userPausedRef.current = false;
+      videoRef.current.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
     } else {
+      userPausedRef.current = true;
       videoRef.current.pause();
       setPlaying(false);
     }

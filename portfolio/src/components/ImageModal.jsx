@@ -23,14 +23,20 @@ export default function ImageModal({ isOpen, onClose, src, title }) {
     }
   }, []);
 
+  const updateZoomable = useCallback(() => {
+    const wrapper = visualRef.current;
+    const el = wrapper?.querySelector("img, video");
+    if (!wrapper || !el) return;
+    const naturalWidth = el instanceof HTMLVideoElement ? el.videoWidth : el.naturalWidth;
+    const naturalHeight = el instanceof HTMLVideoElement ? el.videoHeight : el.naturalHeight;
+    const isLarger = naturalWidth > window.innerWidth * 0.9 || naturalHeight > window.innerHeight * 0.85;
+    wrapper.classList.toggle("is-zoomable", isLarger);
+  }, []);
+
   useEffect(() => {
     if (!isOpen) { resetZoom(); return; }
-    const el = visualRef.current?.querySelector("img, video");
-    if (el) {
-      const isLarger = el.naturalWidth > window.innerWidth * 0.9 || el.naturalHeight > window.innerHeight * 0.85;
-      if (isLarger) visualRef.current.classList.add("is-zoomable");
-    }
-  }, [isOpen, resetZoom]);
+    resetZoom();
+  }, [isOpen, src, resetZoom]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -101,9 +107,9 @@ export default function ImageModal({ isOpen, onClose, src, title }) {
         onPointerCancel={stopDrag}
       >
         {isVideo ? (
-          <video src={src} controls autoPlay />
+          <video src={src} controls autoPlay onLoadedMetadata={updateZoomable} />
         ) : (
-          <img src={src} alt={title || "preview"} draggable={false} />
+          <img src={src} alt={title || "preview"} draggable={false} onLoad={updateZoomable} />
         )}
       </div>
       {title && <div className="modal-info">{title}</div>}
